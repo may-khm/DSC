@@ -1,0 +1,91 @@
+01 깃 시작하기
+
+01-1 지옥에서 온 관리자, 깃
+#git의 역할
+1. 버전관리(Version Control)
+'언제 수정', '어떤 것을 변경' 기록
+2. 백업하기(Backup)
+- GitHub: 백업 공간을 제공하는 인터넷 서비스 중 git 파일을 위한 것
+3. 협업하기(Collaboration)
+
+#git program의 종류
+- GitHub Desktop
+GitHub에서 제공. GUI로 구현하여 누구나 쉽게 사용할 수 있지만, 고급 기능은 미비
+- TortoiseGit
+윈도우 전용 프로그램
+- SourceTree
+기본 기능~고급 기능
+* Command Line Interface, CLI
+리눅스/깃 명령 사용
+
+
+01-2 깃 설치하기
+#윈도우에 설치하기
+1. https://git-scm.com 에서 설치 파일 다운로드 및 설치
+2. 설치테스트: [Git Bash] 실행 - 명령어: $ git (깃 명령에서 사용할 수 있는 여러 옵션 표기되면 정상 설치)
+
+#깃 환경 설정하기 - 사용자 정보 입력
+$ git config --global user.name "Mia"
+$ git config --global user.email "mee960219@gmail.com"
+(--global : 옵션, 현재 컴퓨터에 있는 모든 저장소에서 다음의 사용자 정보를 활용)
+
+
+01-3 리눅스 명령 연습하기
+#디렉토리 탐색
+- $ pwd 현재 위치 경로 표시. print working directory의 약어
+- $ ls 현재 디렉토리의 파일 및 디렉토리 확인. list의 약어
+	(ls 옵션)
+	- $ ls -a 숨김파일 및 디렉토리 표시
+	- $ ls -l 파일 또는 디렉토리의 상세 정보 표시
+	- $ ls -r 파일의 정렬순서 거꾸로 표시
+	- $ ls -t 파일 작성 순으로 내림차순 표시
+	* 두 개 옵션 동시 사용 시작하기(예시는 동일한 옵션)
+		- $ ls -al
+		- $ ls -la
+		- $ ls -a -l
+		- $ ls -l -a
+
+#디렉토리 이동: cd는 change directory의 약어
+- $ cd .. 상위 디렉토리 이동 
+- $ cd foldername 현재 디렉토리에 존재하는 해당 폴더명을 갖는 디렉토리로 이동
+- $ cd ~ 홈 디렉토리로 이동
+	(기호)
+	- ~ 홈 디렉토리. 사용자 디렉토리
+	- ./ 현재 사용자가 작업중인 디렉토리
+	- ../ 현재 디렉토리의 상위 디렉토리
+
+#디렉토리 생성 및 제거
+- $ mkdir foldername 폴더명이 foldername인 디렉토리 생성
+- $ rm -r foldername 폴더명이 foldername인 디렉토리 제거.
+	* -r 옵션. 하위 디렉토리와 파일도 삭제
+
+#vim을 활용한 txt 문서 생성
+* vim: 터미널에서 사용할 수 있는 대표적인 편집기
+	- 초기 설치(Choosing the default editer used by Git 단계) 시 설정하였음
+
+1. [Git Bash] 실행
+2. txt파일을 저장할 폴더로 이동
+3. $ vim text.txt
+	text.txt인 파일명을 갖는 파일 생성 및 vim 실행
+4. vim 모드 변경
+	- 초기모드: ex모드
+	- ex모드 -> 입력모드 변경: [i]
+	- 입력모드 -> ex모드 변경: [esc]
+		* ex모드: 저장, 종료 등 명령어를 통한 제어
+		* 입력모드: 텍스트 입력 및 수정
+		* 모드는 vim 프로그램 하단에서 확인할 수 있음
+			(ex) 입력모드: -- 끼 워 넣 기 --
+	* ex모드에서의 명령어
+	
+* 기본편집기 git bash에서 변경
+(예시. notepad++로 변경)
+$ git config --global core.editor "notepad++"
+		- :w 또는 :write
+			편집 중이던 문서 저장
+		- :q 또는 :quit
+			편집기 종료
+		- :wq (filename)
+			편집중이던 문서를 저장하고 종료. 파일명은 선택적으로 입력하며 (filename) 위치에 파일명 입력 시 해당 이름으로 저장됨
+		- :q!
+			문서를 저장하지 않고 vim 종료. 확장자가 .swp인 임시 파일 생성됨
+	
